@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senha Secreta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="setup-nomes">
+        <h2>Definir nome dos jogadores</h2>
+        <p>Jogador 1, insira seu nome:</p>
+        <input type="text" id="nome-jogador1" placeholder="Nome do Jogador 1">
+        
+        <p>Jogador 2, insira seu nome:</p>
+        <input type="text" id="nome-jogador2" placeholder="Nome do Jogador 2">
+        
+        <p><button onclick="confirmarNomes()">Confirmar nomes</button></p>
+    </div>
+
+    <div id="setup-phase" style="display: none;">
+        <h2>Definir senhas:</h2>
+        <p id="prompt-jogador1"></p>
+        <input type="password" id="senha-jogador1" maxlength="4" placeholder="****">
+        <button onclick="definirSenha(1)">Definir Senha</button>
+        
+        <p id="prompt-jogador2"></p>
+        <input type="password" id="senha-jogador2" maxlength="4" placeholder="****">
+        <button onclick="definirSenha(2)">Definir Senha</button>
+    </div>
+
+    <div id="game-phase" style="display: none;">
+        <h2>Fase do Jogo</h2>
+
+        <div id="turn-jogador1">
+            <h3 id="titulo-jogador1"></h3>
+            <input type="text" id="tentativa-jogador1" maxlength="4" placeholder="Digite sua tentativa">
+            <button onclick="fazerTentativa(1)">Tentar</button>
+            <p id="feedback-jogador1"></p>
+        </div>
+
+        <div id="turn-jogador2" style="display: none;">
+            <h3 id="titulo-jogador2"></h3>
+            <input type="text" id="tentativa-jogador2" maxlength="4" placeholder="Digite sua tentativa">
+            <button onclick="fazerTentativa(2)">Tentar</button>
+            <p id="feedback-jogador2"></p>
+        </div>
+
+        <div id="historico-container">
+            <div id="historico-jogador1">
+                <h3 id="titulo-historico-jogador1"></h3>
+                <ul id="lista-historico-jogador1"></ul>
+            </div>
+            <div id="historico-jogador2">
+                <h3 id="titulo-historico-jogador2"></h3>
+                <ul id="lista-historico-jogador2"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
