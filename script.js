@@ -85,9 +85,6 @@ function fazerTentativa(jogador) {
         }
     }
 
-    const feedback = document.getElementById(feedbackId);
-    feedback.textContent = `${nomeJogador}: ${acertosExatos} número(s) na posição correta, ${acertosParciais} número(s) certo(s) mas na posição errada.`;
-
     const tentativaNumero = historico.filter(item => item.jogador === jogador).length + 1;
     const mensagem = `${tentativaNumero}° Tentativa de ${nomeJogador}: Tentativa "${tentativa}", ${acertosExatos} número(s) na posição correta, ${acertosParciais} número(s) certo(s) mas na posição errada.`;
 
